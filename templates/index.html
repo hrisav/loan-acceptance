@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Loan Approval Model</title>
+</head>
+
+
+<body>
+<div class="login">
+    <div class="banner">
+        <h1>Loan Approval Model</h1>
+    </div>
+    <p> This model is created to predict if you qualify to get a certain amount of loan or not. <br>
+    </p>
+    <br> <br>
+
+    <form action="{{ url_for('predict')}}" method="post">
+        <label for="Gender">Gender </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label class="radio-inline">
+            <input type="radio" name="Gender">Male
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="Gender">Female
+        </label>
+        <br><br>
+        <label for="Married"> Are you married? </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label class="radio-inline">
+            <input type="radio" name="Married">Yes
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="Married">No
+        </label>
+        <br><br>
+        <label for="Dependents"> Number of dependents </label> &nbsp;&nbsp;&nbsp;&nbsp;
+        <select id="Dependents" name="Dependents">
+            <option disabled selected value> -- Select an option -- </option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3+">3+</option>
+        </select>
+        <br><br>
+        <label for="Education"> Are you graduated? </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label class="radio-inline">
+            <input type="radio" name="Education">Yes
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="Education">No
+        </label>
+        <br><br>
+        <label for="Self_Employed"> Are you self-employed? </label> &nbsp;
+        <label class="radio-inline">
+            <input type="radio" name="Self_Employed">Yes
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="Self_Employed">No
+        </label>
+        <br><br>
+        <label for="ApplicantIncome">Applicant Income</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="ApplicantIncome" required="required" />
+        <br><br>
+        <label for="CoapplicantIncome">Co-Applicant Income</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="CoapplicantIncome" required="required" />
+        <br><br>
+        <label for="LoanAmount">Loan Amount</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="LoanAmount" required="required" />
+        <br><br>
+        <label for="Loan_Amount_Term">Loan Amount Term</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="Loan_Amount_Term" placeholder="Term in days" required="required" />
+        <br><br>
+        <label for="Credit_History">Credit History</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <select id="Credit_History" name="Credit_History">
+            <option disabled selected value> -- Select an option -- </option>
+            <option value="All debts paid">All debts paid</option>
+            <option value="Not paid">Not paid</option>
+        </select>
+        <br><br>
+        <label for="Property_Area">Property Area</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <select id="Property_Area" name="Property_Area">
+            <option disabled selected value> -- Select an option -- </option>
+            <option value="Rural">Rural</option>
+            <option value="Semiurban">Semiurban</option>
+            <option value="Urban">Urban</option>
+        </select>
+
+        <br><br>
+
+
+        <p style="text-align:center;"><input type="submit", value = "Submit" style="height:30px; width:70px"></p>
+    </form>
+
+    <br>
+    <br><br><h3>{{ prediction_text }}</h3>
+</div>
+
+</body>
+
+</html>
+
+<style type="text/css">
+
+.login {
+height: 620px;
+  width: 600px;
+  border: 1px solid green ;
+  background-color: #E9ECE9;
+  opacity: 0.75;
+  padding: 20px 50px;
+}
+         body {
+                  width: 100vw;
+                  height: 100vh;
+                  display: flex;
+                  overflow: hidden;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                  font-family: sans-serif;
+                  font-size: 16px;
+                  background-image: url(https://images.unsplash.com/photo-1579185589974-471664177bb5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80);
+                  background-position: center; /* Center the image */
+                  background-repeat: no-repeat; /* Do not repeat the image */
+                  background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+  </style>
