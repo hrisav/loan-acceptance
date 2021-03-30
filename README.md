@@ -1,4 +1,6 @@
-# Google Playstore Apps Rating Prediction
+# Loan Acceptance Prediction
+
+Data set taken from : https://datahack.analyticsvidhya.com/contest/practice-problem-loan-prediction-iii/
 
 Problem Statement
 -
