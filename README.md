@@ -55,6 +55,7 @@ Steps Involved
 - Encoding
 - Preprocessing
 - Model Building
+- UI Building
 - Deployment
 
 Output
