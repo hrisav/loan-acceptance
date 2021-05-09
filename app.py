@@ -67,6 +67,5 @@ def predict():
         return render_template('index.html')
 
 
-#app.run(host='0.0.0.0', port=8080)
-app.run(host="0.0.0.0")
-#app.run(debug=True)
+#app.run(host="0.0.0.0")            # deploy
+app.run(debug=True)                # run on local system
