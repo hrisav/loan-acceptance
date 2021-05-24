@@ -32,7 +32,7 @@ How to run
 Algorithms
 -
 
-We tried to perform model building using Decision Tree, Random Forest, Logistic Regression. Also we tried to find out the best result by hyper parameter tuning. We got the best accuracy score when we applied Logistic Regression with cross validation. So we went ahead with this algorithm for model building.
+We tried to perform model building using K Nearest Neighbors, Decision Tree, Logistic Regression, Gradient Boosting. Also we tried to find out the best result by hyper parameter tuning. We got the best Recall and F1 score when we applied **Gradient Boosting** with GridSearchCV (recall = 0.53, f1-score = 0.60). So we went ahead with this algorithm for model building.
 
 Deployment on AWS EC2
 -
@@ -52,11 +52,12 @@ Steps Involved
 
 - Understanding Data
 - Data Cleaning
-- Handling Missing Values
 - Exploratory Analysis
+- Feature Engineering
 - Encoding
-- Preprocessing
+- Feature Selection & Scaling
 - Model Building
+- Use of PyCaret
 - UI Building
 - Deployment
 
